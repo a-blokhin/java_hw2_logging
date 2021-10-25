@@ -5,12 +5,10 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 public class Application{
 
-    public void waitForInput() {
+    public void waitForInput(String tag) {
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println("Waiting for tag. Key in Ctrl+D to exit.");
-            String tag = scanner.nextLine();
             System.out.println("Waiting for new lines. Key in Ctrl+D to exit.");
-            PrintStream out = new PrintStream(new File("log.txt"));
+            PrintStream out = new PrintStream("log.txt");
             int num = 0;
             while (true) {
                 String input = scanner.nextLine();
